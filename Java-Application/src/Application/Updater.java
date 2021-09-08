@@ -40,7 +40,7 @@ public class Updater {
             System.out.println(version);
             System.out.println(onlineVersion);
             
-            if (version==onlineVersion) {
+            if (version!=onlineVersion) {
             	downloadUpdate();
             } else {
             	return;
@@ -64,7 +64,6 @@ public class Updater {
 			System.out.println("Finalizing");
 			versionFile.delete();
 			onlineVersionFile.renameTo(versionFile);
-			
 			
 		} catch (Exception e3) {
 			e3.printStackTrace();
