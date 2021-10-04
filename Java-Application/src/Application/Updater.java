@@ -78,7 +78,7 @@ public class Updater {
 			versionFile.delete();
 			onlineVersionFile.renameTo(versionFile);
 			
-			//should unzip the build.zip file and paste it into the current dirrectory (/Java-Game-Launcher/src/)
+			//should unzip the build.zip file and paste it into the current dirrectory
 			FileUnzipper.unzip(System.getProperty("user.dir")+"/build.zip", System.getProperty("user.dir"));
 			
 			
