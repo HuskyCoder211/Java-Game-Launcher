@@ -8,12 +8,8 @@ public class Launcher {
 		new Window();
 	}
 	public static void launch() {
+		//atemps to run the unzipped file using the path "build.Launcher"
 		Runtime r = Runtime.getRuntime();
-		try {
-			r.exec("cd "+System.getProperty("user.dir"));
-			
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+		r.exec("java -jar build.Launcher");
 	}
 }
