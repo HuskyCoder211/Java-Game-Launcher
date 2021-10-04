@@ -68,7 +68,7 @@ public class Updater {
 			versionFile = new File(System.getProperty("user.dir") + "/version.txt");
 			
 			
-			File oldUpdate = new File(System.getProperty("user.dir") + "/build.zip");
+			File oldUpdate = new File(System.getProperty("user.dir") + "/build/");
 			oldUpdate.delete();
 			
 			InputStream in = new URL("https://HuskyCoder211.github.io/Java-Game-Launcher/build.zip").openStream();
@@ -77,6 +77,9 @@ public class Updater {
 			System.out.println("Finalizing");
 			versionFile.delete();
 			onlineVersionFile.renameTo(versionFile);
+			
+			//should unzip the build.zip file and paste it into the current dirrectory (/Java-Game-Launcher/src/)
+			FileUnzipper.unzip(System.getProperty("user.dir")+"/build.zip", System.getProperty("user.dir"));
 			
 			
 		} catch (Exception e3) {
