@@ -12,12 +12,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import Application.Log.Logger;
 
 public class Updater {
 	public static int version;
 	public static int onlineVersion;
 	public static File versionFile;
 	public static File onlineVersionFile;
+	public static Logger updateLogger;
 	
 	public static void checkForUpdate() throws Exception {
 		Launcher.status = "Checking for updates";
