@@ -19,7 +19,7 @@ public class Updater {
 	public static int onlineVersion;
 	public static File versionFile;
 	public static File onlineVersionFile;
-	public static Logger updateLogger;
+	public static Logger updateLogger = new Logger();
 	
 	public static void checkForUpdate() throws Exception {
 		Launcher.status = "Checking for updates";
@@ -86,10 +86,10 @@ public class Updater {
 			
 		} catch (Exception e3) {
 			e3.printStackTrace();
+			updateLogger.log("update download failed");
 		}
 		
 		Launcher.status = "ready";
 		UpdateWindow.close();
-		
 	}
 }
