@@ -1,6 +1,7 @@
 package Application;
 
 import java.io.IOException;
+import build.Game;
 
 public class Launcher {
 	public static String status = "ready";
@@ -9,7 +10,7 @@ public class Launcher {
 	}
 	public static void launch() {
 		//atemps to run the unzipped file using the path "build.Launcher"
-		Runtime r = Runtime.getRuntime();
-		r.exec("java -jar build.Launcher");
+		Game game = new Game();
+		game.start();
 	}
 }
