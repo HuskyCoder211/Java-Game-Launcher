@@ -1,6 +1,7 @@
 package Application;
 
 import build.Game;
+import Application.Log.Logger;
 
 public class Launcher {
 	public static String status = "ready";
