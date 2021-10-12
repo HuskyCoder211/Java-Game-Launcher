@@ -1,4 +1,4 @@
-package Application;
+package com.snowdogstudios.launcher;
 
 import build.Game;
 import Application.Log.Logger;
