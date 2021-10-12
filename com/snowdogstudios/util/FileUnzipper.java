@@ -1,7 +1,7 @@
 /** Credit https://www.journaldev.com/960/java-unzip-file-example **/
 
 
-package Application;
+package com.snowdogstudios.util;
 
 import java.io.File;
 import java.io.FileInputStream;
