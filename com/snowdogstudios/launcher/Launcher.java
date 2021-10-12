@@ -2,6 +2,7 @@ package com.snowdogstudios.launcher;
 
 import build.Game;
 import com.snowdogstudios.util.Logger;
+import build.com.snowdogstudio.launcher.Main;
 
 public class Launcher {
 	public static String status = "ready";
@@ -9,10 +10,7 @@ public class Launcher {
 		new Window();
 	}
 	public static void launch() {
-		
-		//atemps to run the unzipped file using the path "build.Launcher"
-		Game game = new Game();
-		game.start();
-		
+		Main.main();
+		System.exit(0);
 	}
 }
