@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import com.snowdogstudios.util.FileUnzipper;
+import com.snowdogstudios.util.Logger;
 
 public class Updater {
 	public static int version;
