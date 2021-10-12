@@ -2,7 +2,7 @@ package com.snowdogstudios.launcher;
 
 import build.Game;
 import com.snowdogstudios.util.Logger;
-import build.com.snowdogstudio.launcher.Main;
+import build.com.snowdogstudio.game.Main;
 
 public class Launcher {
 	public static String status = "ready";
