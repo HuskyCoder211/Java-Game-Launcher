@@ -1,4 +1,4 @@
-package Application;
+package com.snowdogstudios.launcher;
 
 import java.io.BufferedReader;
 
