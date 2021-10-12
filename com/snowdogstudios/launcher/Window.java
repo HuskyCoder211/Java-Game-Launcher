@@ -1,4 +1,4 @@
-package Application;
+package com.snowdogstudios.launcher;
 
 import javax.swing.*;
 import java.awt.event.*;
