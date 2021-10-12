@@ -1,4 +1,4 @@
-package crashes;
+package com.snowdogstudios.crashes;
 
 public class CrashReporter {
   public CrashReporter() {
