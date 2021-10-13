@@ -24,7 +24,7 @@ public class CrashReporter {
             file.createNewFile();
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(dtf.format(now)+reason);
+            bw.write(dtf.format(now)+""+reason);
             bw.flush();
             bw.close();
 
