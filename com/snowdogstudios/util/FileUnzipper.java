@@ -20,7 +20,7 @@ public class UnzipFiles {
         unzip(zipFilePath, destDir);
     }
 
-    private static void unzip(String zipFilePath, String destDir) {
+    public static void unzip(String zipFilePath, String destDir) {
         File dir = new File(destDir);
         // create output directory if it doesn't exist
         if(!dir.exists()) dir.mkdirs();
