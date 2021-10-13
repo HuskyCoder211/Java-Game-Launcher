@@ -76,7 +76,7 @@ public class Updater {
 			oldUpdate.delete();
 			
 			InputStream in = new URL("https://HuskyCoder211.github.io/Java-Game-Launcher/build.jar").openStream();
-			Files.copy(in, Paths.get("build.zip"));
+			Files.copy(in, Paths.get("build.jar"));
 			
 			System.out.println("Finalizing");
 			versionFile.delete();
@@ -88,7 +88,7 @@ public class Updater {
 			
 		} catch (Exception e3) {
 			e3.printStackTrace();
-			updateLogger.log("update download failed");
+			updateLogger.log("Update download failed: "+e3.toString());
 		}
 		
 		Launcher.status = "ready";
