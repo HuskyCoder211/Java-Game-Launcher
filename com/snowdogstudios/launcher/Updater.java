@@ -14,6 +14,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import com.snowdogstudios.util.FileUnzipper;
 import com.snowdogstudios.util.Logger;
+import com.snowdogstudios.crashes.CrashReporter;
 
 public class Updater {
 	public static int version;
