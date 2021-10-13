@@ -1,8 +1,7 @@
 package com.snowdogstudios.launcher;
 
-import build.Game;
 import com.snowdogstudios.util.Logger;
-import build.com.snowdogstudio.game.Main;
+import com.snowdogstudios.crashes.CrashReporter;
 
 public class Launcher {
 	public static String status = "ready";
@@ -10,7 +9,7 @@ public class Launcher {
 		new Window();
 	}
 	public static void launch() {
-		Main.main();
-		System.exit(0);
+		Runtime r = Runtime.getRuntime();
+		r.exec("java versions.latestrelease.Main");
 	}
 }
