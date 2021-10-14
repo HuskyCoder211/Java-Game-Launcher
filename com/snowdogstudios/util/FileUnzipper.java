@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class UnzipFiles {
+public class FileUnzipper {
 
     public static void main(String[] args) {
         String zipFilePath = "/Users/pankaj/tmp.zip";
@@ -56,3 +56,4 @@ public class UnzipFiles {
         }
         
     }
+}

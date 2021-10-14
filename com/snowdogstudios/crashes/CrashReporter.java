@@ -10,26 +10,23 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
 public class CrashReporter {
-    public static double id;
-    
     public CrashReporter() {
-        this.id = Math.random();
+
     }
   
     public static void report(String reason) {
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("[yyyy/MM/dd HH:mm:ss]");  
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
         LocalDateTime now = LocalDateTime.now();  
         try{
             File file = new File("crashreport.txt");
             file.createNewFile();
             FileWriter fw = new FileWriter(file);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(dtf.format(now)+" "+reason);
+            bw.write("["+dtf.format(now)+"]: "+reason);
             bw.flush();
             bw.close();
-
         }catch(IOException e){
-        e.printStackTrace();
+            e.printStackTrace();
         }
     }
 }

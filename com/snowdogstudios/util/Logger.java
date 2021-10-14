@@ -1,8 +1,8 @@
-package com.snowdogstudios.utl;
+package com.snowdogstudios.util;
 
 public class Logger {
   public Logger() {
-    this.id = Math.random(); 
+    
   }
   
   public static void log(String data) {
