@@ -21,7 +21,7 @@ public class Launcher {
 	}
 	public static void launch() {
 		try {
-			ProcessStarter.start("build");
+			ProcessStarter.start("build.com.snowdogstudios.Main");
 			Process game = ProcessStarter.getCurrentRunningProcess();
 		} catch(Exception e) {
 			launchLogger.log("Launch Failled: "+e.toString());
