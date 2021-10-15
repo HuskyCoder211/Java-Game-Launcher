@@ -80,7 +80,7 @@ public class Updater {
 			
 			InputStream in = new URL("https://HuskyCoder211.github.io/SnowDogGame/bin/build.jar").openStream();
 			Files.copy(in, Paths.get("build.jar"));
-			File build = new File("build.jar");
+			File build = new File(System.getProperty("user.dir") + "/build.jar");
 			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
 			
 			System.out.println("Finalizing");
