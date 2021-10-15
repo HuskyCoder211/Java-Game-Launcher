@@ -30,7 +30,7 @@ public class Updater {
 		Launcher.status = "Checking for updates";
 		
 		try {
-			File onlineVersionFile = new File(System.getProperty("user.dir") + "/onlineVersion.txt");
+			File onlineVersionFile = new File(System.getProperty("user.dir") + "/installations/onlineVersion.txt");
             onlineVersionFile.delete();
 		} catch(Exception e2) {
 			e2.printStackTrace();
@@ -40,13 +40,13 @@ public class Updater {
 
             Files.copy(in, Paths.get("onlineVersion.txt"));
             
-            onlineVersionFile = new File(System.getProperty("user.dir")+"/onlineVersion.txt");
+            onlineVersionFile = new File(System.getProperty("user.dir")+"/installations/onlineVersion.txt");
             BufferedReader onlineVersionBr = new BufferedReader(new FileReader(onlineVersionFile));
             String onlineVersionStr = onlineVersionBr.readLine();
             onlineVersion = Integer.parseInt(onlineVersionStr);
             
             try {
-            	versionFile = new File(System.getProperty("user.dir") + "/version.txt");
+            	versionFile = new File(System.getProperty("user.dir") + "/installations/version.txt");
             	BufferedReader versionBr = new BufferedReader(new FileReader(versionFile));
             	String versionStr = versionBr.readLine();
             	version = Integer.parseInt(versionStr);
@@ -73,16 +73,15 @@ public class Updater {
 		UpdateWindow.create();
 		
 		try {
-			versionFile = new File(System.getProperty("user.dir") + "/version.txt");
+			versionFile = new File(System.getProperty("user.dir") + "/installations/version.txt");
 			
-			
-			File oldUpdate = new File(System.getProperty("user.dir") + "/game/build.jar");
+			File oldUpdate = new File(System.getProperty("user.dir") + "/installations/build.jar");
 			oldUpdate.delete();
 			
 			InputStream in = new URL("https://HuskyCoder211.github.io/Java-Game-Launcher/build.jar").openStream();
 			Files.copy(in, Paths.get("build.jar"));
 			File build = new File("build.jar");
-			build.renameTo(new File(System.getProperty("user.dir")+"/game/build.jar"));
+			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
 			
 			System.out.println("Finalizing");
 			versionFile.delete();
@@ -90,7 +89,6 @@ public class Updater {
 			
 			
 		} catch (Exception e3) {
-			e3.printStackTrace();
 			updateLogger.log("Update download failed: "+e3.toString());
 			CrashReporter r = new CrashReporter();
 			r.report("Update download failed: "+e3.toString());
