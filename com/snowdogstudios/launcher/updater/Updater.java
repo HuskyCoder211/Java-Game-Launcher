@@ -78,7 +78,7 @@ public class Updater {
 			File oldUpdate = new File(System.getProperty("user.dir") + "/installations/build.jar");
 			oldUpdate.delete();
 			
-			InputStream in = new URL("https://HuskyCoder211.github.io/Java-Game-Launcher/build.jar").openStream();
+			InputStream in = new URL("https://HuskyCoder211.github.io/SnowDogGame/bin/build.jar").openStream();
 			Files.copy(in, Paths.get("build.jar"));
 			File build = new File("build.jar");
 			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
