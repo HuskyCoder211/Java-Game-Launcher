@@ -1,5 +1,8 @@
 package installations;
 
+import com.snowdogstudios.utils.Logger;
+import com.snowdogstudios.crashes.CrashReporter;
+
 public class ProcessStarter {
   public static void start(String packagePath) {
     try {
