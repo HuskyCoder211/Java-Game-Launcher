@@ -1,6 +1,6 @@
 package installations;
 
-import com.snowdogstudios.utils.Logger;
+import com.snowdogstudios.util.Logger;
 import com.snowdogstudios.crashes.CrashReporter;
 
 public class ProcessStarter {
@@ -9,7 +9,9 @@ public class ProcessStarter {
       Process gameProcess = Runtime.getRuntime().exec("java -cp "+PackagePath);
     } catch(Exception e) {
       CrashReporter reporter = new CrashReporter();
+      Logger processLogger = new Logger();
       reporter.report("Failled to start game process: "+e.toString());
+      processLogger.log("Failed to start game process: "+e.toString());
     }
   }
 }
