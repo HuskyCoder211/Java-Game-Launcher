@@ -83,7 +83,7 @@ public class Updater {
 			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
 			
 			System.out.println("Downloading assets");
-			Downloader.downloadAssets("https://Huskycoder211.github.io/SnowDogGame/bin/assetsToDownload.txt");
+			Downloader.downloadAssets("https://Huskycoder211.github.io/SnowDogGame/bin/assets.zip");
 			
 			System.out.println("Finalizing");
 			versionFile.delete();
