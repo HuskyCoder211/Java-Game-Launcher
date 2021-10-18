@@ -18,6 +18,7 @@ import com.snowdogstudios.crashes.CrashReporter;
 import com.snowdogstudios.launcher.window.UpdateWindow;
 import com.snowdogstudios.launcher.Launcher;
 import com.snowdogstudios.crashes.CrashReporter;
+import com.snowdogstudios.launcher.download.Downloader;
 
 public class Updater {
 	public static int version;
@@ -54,9 +55,6 @@ public class Updater {
             	versionFile.renameTo(onlineVersionFile);
             }
             
-            System.out.println(version);
-            System.out.println(onlineVersion);
-            
             if (version<onlineVersion) {
             	downloadUpdate();
             } else {
@@ -85,7 +83,7 @@ public class Updater {
 			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
 			
 			System.out.println("Downloading assets");
-			//download assets
+			Downloader.downloadAssets("https://Huskycoder211.github.io/SnowDogGame/bin/assets");
 			
 			System.out.println("Finalizing");
 			versionFile.delete();
