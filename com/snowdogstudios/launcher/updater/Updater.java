@@ -18,7 +18,7 @@ import com.snowdogstudios.crashes.CrashReporter;
 import com.snowdogstudios.launcher.window.UpdateWindow;
 import com.snowdogstudios.launcher.Launcher;
 import com.snowdogstudios.crashes.CrashReporter;
-import com.snowdogstudios.launcher.download.Downloader;
+import com.snowdogstudios.launcher.updater.download.Downloader;
 
 public class Updater {
 	public static int version;
@@ -78,8 +78,6 @@ public class Updater {
 			
 			System.out.println("Downloading build");
 			Downloader.download("https://HuskyCoder211.github.io/SnowDogGame/bin/build.jar", System.getProperty("user.dir"), "build.jar");
-			File build = new File(System.getProperty("user.dir") + "/build.jar");
-			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
 			
 			System.out.println("Downloading assets");
 			Downloader.downloadAssets("https://Huskycoder211.github.io/SnowDogGame/bin/assets.zip");
@@ -87,7 +85,6 @@ public class Updater {
 			System.out.println("Finalizing");
 			versionFile.delete();
 			onlineVersionFile.renameTo(versionFile);
-			
 			
 		} catch (Exception e3) {
 			updateLogger.log("Update download failed: "+e3.toString());
