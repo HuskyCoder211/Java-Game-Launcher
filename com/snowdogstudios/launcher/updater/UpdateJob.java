@@ -44,6 +44,7 @@ public class UpdateJob {
   
   public static void startFileDownloads() {
     int current = 0;
+    started = true;
     while (current<1024) {
       logger.log("Downloading "+queue[current]);
       Downloader.download(new URL(queue[current]), System.getProperty("user.dir")+"/com/snowdogstudios/game/", ".class");
