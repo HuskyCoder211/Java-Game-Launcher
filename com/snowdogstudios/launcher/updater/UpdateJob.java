@@ -16,6 +16,7 @@ import com.snowdogstudios.crashes.CrashReporter;
 import com.snowdogstudios.launcher.window.UpdateWindow;
 import com.snowdogstudios.launcher.Launcher;
 import com.snowdogstudios.crashes.CrashReporter;
+import com.snowdogstudios.download.Downloader;
 
 public class UpdateJob {
   //urls of files to download
@@ -30,5 +31,20 @@ public class UpdateJob {
     Files.copy(in Paths.get("FilesToDownload.txt"));
     BufferederedReader br = new BufferedReader(new FileReader(new File(System.getProperty("user.dir")+"/FilesToDownload.txt")));
     //read FilesToDownload.txt and put the strings into the queue
+    int current = 0;
+    while (current<1024) {
+      queue[current] = br.readLine();
+      current++;
+    }
+    
+    startFileDownloads();
+  }
+  
+  public static void startFileDownloads() {
+    int current = 0;
+    while (current<1024) {
+      Downloader.download(new URL(queue[current]), System.getProperty("user.dir")+"/com/snowdogstudios/game/", (whatever the file name is));
+      current++;
+    }
   }
 }
