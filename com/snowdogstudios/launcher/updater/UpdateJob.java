@@ -47,8 +47,18 @@ public class UpdateJob {
     started = true;
     while (current<1024) {
       logger.log("Downloading "+queue[current]);
-      Downloader.download(new URL(queue[current]), System.getProperty("user.dir")+"/com/snowdogstudios/game/", ".class");
+      try {
+        Downloader.download(new URL(queue[current]), System.getProperty("user.dir")+"/com/snowdogstudios/game/", ".class");
+      } catch(IOException e) {
+        assesDownloadError(e, queue[current]);
+      }
       current++;
     }
+  }
+  
+  public static void assesDownloadError(IOException e, String q) {
+    logger.log("Download error: "+e.toString());
+    logger.log("Retrying download from "+q);
+    Downloader.download(new URL(q), System.getProperty("user.dir")+"/com/snowdogstudios/game/", ".class");
   }
 }
