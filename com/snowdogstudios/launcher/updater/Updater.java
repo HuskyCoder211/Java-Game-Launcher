@@ -75,18 +75,11 @@ public class Updater {
 		try {
 			versionFile = new File(System.getProperty("user.dir") + "/version.txt");
 			
-			File oldUpdate = new File(System.getProperty("user.dir") + "/installations/build.jar");
-			oldUpdate.delete();
-			
-			InputStream in = new URL("https://HuskyCoder211.github.io/SnowDogGame/bin/build.jar").openStream();
-			Files.copy(in, Paths.get("build.jar"));
-			File build = new File(System.getProperty("user.dir") + "/build.jar");
-			build.renameTo(new File(System.getProperty("user.dir")+"/installations/build.jar"));
+			UpdateJob.start();
 			
 			System.out.println("Finalizing");
 			versionFile.delete();
 			onlineVersionFile.renameTo(versionFile);
-			
 			
 		} catch (Exception e3) {
 			updateLogger.log("Update download failed: "+e3.toString());
