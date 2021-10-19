@@ -26,6 +26,8 @@ public class UpdateJob {
   //url path to the files needed to be downloaded
   public static final URL url = new URL("https://HuskyCoder211.github.io/SnowDogGame/FilesToDownload.txt");
   
+  public static Logger logger = new Logger();
+  
   public static void start() {
     InputStream in = url.openStream();
     Files.copy(in Paths.get("FilesToDownload.txt"));
@@ -43,7 +45,8 @@ public class UpdateJob {
   public static void startFileDownloads() {
     int current = 0;
     while (current<1024) {
-      Downloader.download(new URL(queue[current]), System.getProperty("user.dir")+"/com/snowdogstudios/game/", (whatever the file name is));
+      logger.log("Downloading "+queue[current]);
+      Downloader.download(new URL(queue[current]), System.getProperty("user.dir")+"/com/snowdogstudios/game/", ".class");
       current++;
     }
   }
