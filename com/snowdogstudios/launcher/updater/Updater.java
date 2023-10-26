@@ -30,7 +30,7 @@ public class Updater {
 		Launcher.status = "Checking for updates";
 		
 		try {
-			File onlineVersionFile = new File(System.getProperty("user.dir") + "/installations/onlineVersion.txt");
+			File onlineVersionFile = new File(System.getProperty("user.dir") + "/onlineVersion.txt");
             onlineVersionFile.delete();
 		} catch(Exception e2) {
 			e2.printStackTrace();
